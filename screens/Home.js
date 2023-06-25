@@ -23,29 +23,29 @@ const Home = () => {
     },
     {
       name: "node",
-      id: "4",
+      id: "5",
     },
     {
       name: "c",
-      id: "4",
+      id: "6",
     },
     {
         name: "react",
-        id: "4",
+        id: "7",
       },
       {
         name: "java-script",
-        id: "4",
+        id: "8",
       },
       {
         name: "nativescript",
-        id: "4",
+        id: "9",
       },
       
   ];
 
   const [input, setInput] = useState("");
-  console.log(input)
+//   console.log(input)
   return (
     <View style={{ margin: 15, width: "90%" }}>
       <View
@@ -65,12 +65,12 @@ const Home = () => {
         />
         <TextInput
           placeholder="search"
-          style={{ fontSize: 15 }}
+          style={{ fontSize: 15 , width:"90%", height:30,}}
           value={input}
           onChangeText={(text) => setInput(text)}
         />
       </View>
-      <Searchfilter />
+      <Searchfilter input={input}  setInput={setInput} data={words} />
     </View>
   );
 };

@@ -1,10 +1,31 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import { FlatList } from 'react-native'
 
-const Searchfilter = () => {
+const Searchfilter = ({data,input, setInput }) => {
   return (
-    <View>
-      <Text>Searchfilter</Text>
+    <View style={{marginTop:20, }}>
+      
+      <FlatList data={data} renderItem={({item})=>{
+        if(input===""){
+            return(
+                <View style={{marginVertical:12, }}>
+                <Text style={{fontSize:14,fontWeight:'bold'}}>{item.name}</Text>
+                </View>
+            )
+        }
+
+        if(item.name.toLowerCase().includes(input.toLowerCase())){
+            return(
+                <View style={{marginVertical:12, }}>
+                <Text style={{fontSize:14,fontWeight:'bold'}}>{item.name}</Text>
+                </View>
+            )
+        }
+
+
+
+      }}/>
     </View>
   )
 }
